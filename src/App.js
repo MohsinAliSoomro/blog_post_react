@@ -1,5 +1,5 @@
 import './App.css';
-import Post from './components/post';
+// import Post from './components/post';
 import Video from './components/video';
 
 function App() {
