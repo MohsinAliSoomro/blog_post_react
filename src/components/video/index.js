@@ -1,7 +1,7 @@
-import React,{useState,useEffect} from 'react'
-import ReactPlayer from 'react-player'
+import React, { useState, useEffect } from 'react';
+import ReactPlayer from 'react-player';
 function Video() {
-    const [ videos, setVideos ] = useState([]);
+	const [ videos, setVideos ] = useState([]);
 	useEffect(() => {
 		let mounted = true;
 		if (mounted) {
@@ -14,22 +14,20 @@ function Video() {
 		return () => {
 			mounted = false;
 		};
-    }, []);
-    console.log(videos)
-    return (
-        <div>
-            <h3>Videos</h3>
-            <hr />
-            {videos.map(video => {
-                return (
-                    <div key={video.id}>
-                        <ReactPlayer width="100%" height="200px" controls={true} url={video.video} onError={()=><div>Error </div>} />
-                        <hr />
-                    </div>
-                )
-            })}
-        </div>
-    )
+	}, []);
+
+	return (
+		<div>
+			{videos.map((video) => {
+				return (
+					<div key={video.id}>
+						<ReactPlayer width="100%" controls={true} url={video.video} onError={() => <div>Error </div>} />
+						<hr />
+					</div>
+				);
+			})}
+		</div>
+	);
 }
 
-export default Video
+export default Video;

@@ -10,8 +10,8 @@ function Replies({ id }) {
 					.then((res) => res.json())
 					.then((data) => {
 						if (data) {
-							const filterComment = data.filter((r) => r.comment === id);
-							setReplies(filterComment);
+							const filterReplies = data.filter((r) => r.comment === id);
+							setReplies(filterReplies);
 						}
 					});
 			}
@@ -24,7 +24,7 @@ function Replies({ id }) {
 			<p>Reply</p>
 			{replies.map((reply) => {
 				return (
-					<div>
+					<div style={{backgroundColor:'magenta',padding:'4px',borderRadius:'4px' }} key={reply.id}>
 						<BsReply />
 						{reply.content}
 					</div>
