@@ -30,7 +30,8 @@ function Video() {
             <button
                 onClick={()=>setLoadMore(loadMore+3)}
 				style={{
-					backgroundColor: 'white',
+                    backgroundColor: 'white',
+                    
 					border: '0px',
 					borderRadius: '3px',
 					margin: '5px'

@@ -34,8 +34,8 @@ function Post() {
 								src={post.thumbnail}
 								alt={post.thumbnail}
 							/>
-							<div style={{ display: 'flex' }}>
-								<h3>{post.title} </h3>
+							<div style={{ display: 'flex',color:'magenta' }}>
+								<h3 >{post.title} </h3>
 								<p style={{ marginTop: '10px', marginLeft: '10px' }}>
 									<AiOutlineFieldTime size={16} />
 									<span style={{ fontSize: '16px' }}>{post.date_published}</span>

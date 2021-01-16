@@ -23,7 +23,7 @@ function Comments({ id }) {
 	
 	return (
 		<div>
-			<h2>Comments</h2>
+			<h2 style={{color:'magenta'}}>Comments</h2>
 			{comments.map((comment) => {
 				return (
 					<div key={comment.id} className="panel panel-default">
@@ -31,18 +31,18 @@ function Comments({ id }) {
 							<section className="post-heading">
 								<div className="row">
 									<div className="col-md-11">
-										<div className="media">
+										<div className="media" style={{color:'magenta'}}>
 											<div className="media-left">
 												<AiOutlineComment size={20} />
 											</div>
 											<div className="media-body">
-												<p className="anchor-time">{comment.date_published}</p>
+												<p  className="anchor-time">{comment.date_published}</p>
 											</div>
 										</div>
 									</div>
 								</div>
 							</section>
-							<section className="post-body">
+							<section style={{color:'magenta'}} className="post-body">
 								<p>{comment.content}</p>
 								<Replies id={comment.id} />
 							</section>

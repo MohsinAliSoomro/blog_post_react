@@ -24,7 +24,7 @@ function Replies({ id }) {
 			<p>Reply</p>
 			{replies.map((reply) => {
 				return (
-					<div style={{backgroundColor:'magenta',padding:'4px',borderRadius:'4px' }} key={reply.id}>
+					<div style={{backgroundColor:'magenta',color:'cyan',padding:'4px',borderRadius:'4px' }} key={reply.id}>
 						<BsReply />
 						{reply.content}
 					</div>
