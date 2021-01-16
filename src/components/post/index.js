@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineFieldTime } from 'react-icons/ai';
-import Comments from '../comments'
+import './style.css';
+import Comments from '../comments';
 function Post() {
 	const [ post, setPost ] = useState({});
 	useEffect(() => {
@@ -19,18 +20,20 @@ function Post() {
 	if (!post) {
 		return <div>Something Errors</div>;
 	}
-    console.log(post)
+	console.log(post);
 	return (
-		<div>
-			<h3>{post.title}</h3>
-			<p >
-                <AiOutlineFieldTime size={16} />
-                <span style={{fontSize:'16px'}}>{post.date_published}</span>
-				
-			</p>
+		<div className="blog-container">
 			<img width="100%" src={post.thumbnail} alt={post.thumbnail} />
-            <p style={{fontSize:'20px'}}>{post.content}</p>
-            <Comments id={post.id} />
+			<div style={{ display: 'flex' }}>
+				<h3>{post.title} </h3>
+				<p style={{ marginTop: '10px', marginLeft: '10px' }}>
+					<AiOutlineFieldTime size={16} />
+					<span style={{ fontSize: '16px' }}>{post.date_published}</span>
+				</p>
+			</div>
+
+			<p style={{ fontSize: '20px' }}>{post.content}</p>
+			<Comments id={post.id} />
 		</div>
 	);
 }
