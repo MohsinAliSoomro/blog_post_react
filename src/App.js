@@ -1,6 +1,7 @@
+import React from 'react';
 import './App.css';
-// import Post from './components/post';
-import Video from './components/video';
+import Post from './components/post';
+// import Video from './components/video';
 
 function App() {
 	return (
@@ -9,7 +10,7 @@ function App() {
 			<hr />
 			<div className="row">
 				<div className="col">
-					<Video />
+					<Post />
 					
 				</div>
 			</div>
