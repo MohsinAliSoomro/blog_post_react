@@ -6,7 +6,7 @@ import Video from './components/video';
 function App() {
   return (
     <div className="container">
-      <h2>BLog Posts</h2>
+      <h2>Blog Posts</h2>
       <hr />
       <div className="row">
         <div className="col-8"><Post /></div>
