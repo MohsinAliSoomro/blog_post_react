@@ -18,6 +18,8 @@ function Video() {
     console.log(videos)
     return (
         <div>
+            <h3>Videos</h3>
+            <hr />
             {videos.map(video => {
                 return (
                     <div key={video.id}>

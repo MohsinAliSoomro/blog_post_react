@@ -10,7 +10,8 @@ function App() {
       <hr />
       <div className="row">
         <div className="col-8"><Post /></div>
-        <div className="col-4"><Video /></div>
+        <div className="col-4">
+          <Video /></div>
       </div>
       
     </div>
