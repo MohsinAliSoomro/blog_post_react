@@ -10,9 +10,9 @@ function App() {
 		let mounted = true;
 		if (mounted) {
 			fetch('https://www.spatialardhi.com/estate/posts/?format=json').then((res) => res.json()).then((data) => {
-				if (data) {
+				
 					setPosts(data);
-				}
+				
 			});
 		}
 		return () => {
