@@ -32,7 +32,7 @@ function Post() {
 				</p>
 			</div>
 
-			<p style={{ fontSize: '20px' }}>{post.content}</p>
+			<p style={{ fontSize: '20px',backgroundColor:'magenta',padding:'5px',borderRadius:'5px'}}>{post.content}</p>
 			<Comments id={post.id} />
 		</div>
 	);
