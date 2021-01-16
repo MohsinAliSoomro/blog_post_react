@@ -21,7 +21,7 @@ function Video() {
             {videos.map(video => {
                 return (
                     <div key={video.id}>
-                        <ReactPlayer width="100%"  controls={true} url={video.video} onError={()=><div>Error </div>} />
+                        <ReactPlayer width="100%" height="200px" controls={true} url={video.video} onError={()=><div>Error </div>} />
                         <hr />
                     </div>
                 )
