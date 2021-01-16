@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineComment } from 'react-icons/ai';
+import Replies from '../replies';
 import './style.css';
 function Comments({ id }) {
 	const [ comments, setComments ] = useState([]);
@@ -19,7 +20,7 @@ function Comments({ id }) {
 	if (comments.length === 0 && comments === undefined) {
 		return <div>Loading Comments</div>;
 	}
-	console.log(comments)
+	
 	return (
 		<div>
 			<h2>Comments</h2>
@@ -43,6 +44,7 @@ function Comments({ id }) {
 							</section>
 							<section className="post-body">
 								<p>{comment.content}</p>
+								<Replies id={comment.id} />
 							</section>
 						</div>
 						<hr />

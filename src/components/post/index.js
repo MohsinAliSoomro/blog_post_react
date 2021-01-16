@@ -20,10 +20,10 @@ function Post() {
 	if (!post) {
 		return <div>Something Errors</div>;
 	}
-	console.log(post);
+	
 	return (
 		<div className="blog-container">
-			<img width="100%" src={post.thumbnail} alt={post.thumbnail} />
+			<img style={{border:"1px solid white",borderRadius:'4px'}} width="100%" src={post.thumbnail} alt={post.thumbnail} />
 			<div style={{ display: 'flex' }}>
 				<h3>{post.title} </h3>
 				<p style={{ marginTop: '10px', marginLeft: '10px' }}>
