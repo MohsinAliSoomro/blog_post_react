@@ -44,6 +44,7 @@ function Post() {
 
 							<p
 								style={{
+									color:'cyan',
 									fontSize: '20px',
 									backgroundColor: 'magenta',
 									padding: '5px',
