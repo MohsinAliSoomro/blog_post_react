@@ -32,7 +32,7 @@ function Comments({ id }) {
 									<div className="col-md-11">
 										<div className="media">
 											<div className="media-left">
-												<AiOutlineComment size={50} />
+												<AiOutlineComment size={20} />
 											</div>
 											<div className="media-body">
 												<p className="anchor-time">{comment.date_published}</p>
