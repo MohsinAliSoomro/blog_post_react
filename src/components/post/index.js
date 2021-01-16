@@ -25,11 +25,11 @@ function Post() {
 			<h3>{post.title}</h3>
 			<p >
                 <AiOutlineFieldTime size={16} />
-                <span style={{fontSize:'12px'}}>{post.date_published}</span>
+                <span style={{fontSize:'16px'}}>{post.date_published}</span>
 				
 			</p>
 			<img width="100%" src={post.thumbnail} alt={post.thumbnail} />
-            <p>{post.content}</p>
+            <p style={{fontSize:'20px'}}>{post.content}</p>
             <Comments id={post.id} />
 		</div>
 	);
