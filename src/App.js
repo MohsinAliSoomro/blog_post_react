@@ -4,7 +4,7 @@ import Video from './components/video';
 
 function App() {
 	return (
-		<div className="container">
+		<div className="container" style={{backgroundColor:'magenta'}}>
 			<h2>Blog Posts</h2>
 			<hr />
 			<div className="row">
