@@ -4,7 +4,7 @@ import './style.css';
 import Comments from '../comments';
 function Post() {
 	const [ posts, setPosts ] = useState([]);
-	const [ loadMore, setLoadMore ] = useState(3);
+	const [ loadMore, setLoadMore ] = useState(1);
 	useEffect(() => {
 		let mounted = true;
 		if (mounted) {
@@ -27,7 +27,7 @@ function Post() {
 			{posts
 				.map((post) => {
 					return (
-						<div>
+						<div key={post.id}>
 							<img
 								style={{ border: '1px solid white', borderRadius: '4px' }}
 								width="100%"
@@ -57,11 +57,11 @@ function Post() {
 						</div>
 					);
 				})
-				.slice(0, loadMore)}
+				}
 
 			<div style={{ textAlign: 'center' }}>
 				<button
-					onClick={() => setLoadMore(loadMore + 3)}
+					onClick={() => setLoadMore(loadMore + 1)}
 					style={{
 						backgroundColor: 'white',
 						border: '0px',

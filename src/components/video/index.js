@@ -26,7 +26,7 @@ function Video() {
 						<hr />
 					</div>
 				);
-			}).slice(0,loadMore)}
+			})}
             <button
                 onClick={()=>setLoadMore(loadMore+3)}
 				style={{
