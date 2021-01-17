@@ -9,9 +9,11 @@ function App() {
 	// const [ loadMore, setLoadMore ] = useState(1);
 	useEffect(() => {
 		async function GetData() {
-			const json = await fetch('http://www.spatialardhi.com/estate/posts/?format=json');
-			const data =await json.json();
-			setPosts(data)
+			const json = await fetch('http://www.spatialardhi.com/estate/posts/?format=json', {
+				method: 'GET'
+			});
+			const data = await json.json();
+			setPosts(data);
 		}
 		// fetch('https://www.spatialardhi.com/estate/posts/?format=json').then((res) => res.json()).then((data) => {
 		// 	if (data) {
