@@ -3,7 +3,7 @@ import './App.css';
 import Post from './components/post';
 // import Video from './components/video';
 // import axios from 'axios';
-// import { fetch } from 'whatwg-fetch';
+import { fetch } from 'whatwg-fetch';
 function App() {
 	const [ posts, setPosts ] = useState({loading:true,Data:[]});
 	// const [ loadMore, setLoadMore ] = useState(1);
