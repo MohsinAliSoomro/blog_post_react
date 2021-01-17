@@ -8,18 +8,12 @@ function App() {
 	const [ posts, setPosts ] = useState([]);
 	// const [ loadMore, setLoadMore ] = useState(1);
 	useEffect(() => {
-		let mounted = true;
-		if (mounted) {
-			fetch('https://www.spatialardhi.com/estate/posts/?format=json').then((res) => res.json()).then((data) => {
-				if (data) {
-					console.log(data);
-					setPosts(data);
-				}
-			});
-		}
-		return () => {
-			mounted = false;
-		};
+		fetch('https://www.spatialardhi.com/estate/posts/?format=json').then((res) => res.json()).then((data) => {
+			if (data) {
+				console.log(data);
+				setPosts(data);
+			}
+		});
 	}, []);
 	return (
 		<div className="container" style={{ backgroundColor: 'magenta' }}>
