@@ -11,7 +11,7 @@ function App() {
 		if (mounted) {
 			axios.get('https://www.spatialardhi.com/estate/posts/?format=json').then((data) => {
 				
-					setPosts(data);
+					setPosts(data.data);
 				
 			});
 		}
