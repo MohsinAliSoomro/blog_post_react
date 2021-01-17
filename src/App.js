@@ -2,19 +2,19 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Post from './components/post';
 // import Video from './components/video';
-// import axios from 'axios';
-import { fetch } from 'whatwg-fetch';
+import axios from 'axios';
+// import { fetch } from 'whatwg-fetch';
 function App() {
 	const [ posts, setPosts ] = useState({loading:true,Data:[]});
 	// const [ loadMore, setLoadMore ] = useState(1);
 	useEffect(() => {
 		setPosts({loading:true,Data:[]})
 		async function GetData() {
-			const json = await fetch('http://www.spatialardhi.com/estate/posts/?format=json', {
+			const json = await axios.get('http://www.spatialardhi.com/estate/posts/?format=json', {
 				method: 'GET'
 			});
-			const data = await json.json();
-			setPosts({loading:false,Data:data});
+			// const data = await json.json();
+			setPosts({loading:false,Data:json.data});
 		}
 		// fetch('https://www.spatialardhi.com/estate/posts/?format=json').then((res) => res.json()).then((data) => {
 		// 	if (data) {
