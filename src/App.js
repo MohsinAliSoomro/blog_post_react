@@ -9,7 +9,7 @@ function App() {
 	// const [ loadMore, setLoadMore ] = useState(1);
 	useEffect(() => {
 		async function GetData() {
-			const json = await fetch('https://www.spatialardhi.com/estate/posts/?format=json');
+			const json = await fetch('http://www.spatialardhi.com/estate/posts/?format=json');
 			const data =await json.json();
 			setPosts(data)
 		}
