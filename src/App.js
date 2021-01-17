@@ -2,14 +2,14 @@ import React,{useState,useEffect} from 'react';
 import './App.css';
 import Post from './components/post';
 // import Video from './components/video';
-
+import axios from 'axios'
 function App() {
 	const [ posts, setPosts ] = useState([]);
 	// const [ loadMore, setLoadMore ] = useState(1);
 	useEffect(() => {
 		let mounted = true;
 		if (mounted) {
-			fetch('https://www.spatialardhi.com/estate/posts/?format=json').then((res) => res.json()).then((data) => {
+			axios.get('https://www.spatialardhi.com/estate/posts/?format=json').then((data) => {
 				
 					setPosts(data);
 				
