@@ -1,33 +1,34 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import { AiOutlineFieldTime } from 'react-icons/ai';
 import './style.css';
 import Comments from '../comments';
-function Post({post}) {
-	// const [ posts, setPosts ] = useState([]);
-	// const [ loadMore, setLoadMore ] = useState(1);
-	// useEffect(() => {
-	// 	let mounted = true;
-	// 	if (mounted) {
-	// 		fetch('https://www.spatialardhi.com/estate/posts/?format=json').then((res) => res.json()).then((data) => {
-	// 			if (data) {
-	// 				setPosts(data);
-	// 			}
-	// 		});
-	// 	}
-	// 	return () => {
-	// 		mounted = false;
-	// 	};
-	// }, []);
-	if (!post) {
+function Post() {
+	const [ posts, setPosts ] = useState([]);
+	const [ loadMore, setLoadMore ] = useState(1);
+	useEffect(() => {
+		let mounted = true;
+		if (mounted) {
+			fetch('https://www.spatialardhi.com/estate/posts/?format=json').then((res) => res.json()).then((data) => {
+				if (data) {
+					setPosts(data);
+				}
+			});
+		}
+		return () => {
+			mounted = false;
+		};
+	}, []);
+	if (!posts) {
 		return <div>Loading</div>;
 	}
 
 	return (
 		<div className="blog-container">
-			{/* {posts
+			<h2>Blog Posts</h2>
+			{posts
 				.map((post) => {
-					return ( */}
-						<div >
+					return (
+						<div key={post.id} >
 							<img
 								style={{ border: '1px solid white', borderRadius: '4px' }}
 								width="100%"
@@ -55,11 +56,11 @@ function Post({post}) {
 							</p>
 							<Comments id={post.id} />
 						</div>
-					{/* );
-				})
-				} */}
+					 );
+				}).slice(0,loadMore)
+				} 
 
-			{/* <div style={{ textAlign: 'center' }}>
+			 <div style={{ textAlign: 'center' }}>
 				<button
 					onClick={() => setLoadMore(loadMore + 1)}
 					style={{
@@ -71,7 +72,7 @@ function Post({post}) {
 				>
 					Load more
 				</button>
-			</div> */}
+			</div> 
 		</div>
 	);
 }

@@ -18,27 +18,36 @@ function Video() {
 	}, []);
 
 	return (
-        <div style={{ textAlign:'center'}}>
-			{videos.map((video) => {
-				return (
-					<div key={video.id}>
-						<ReactPlayer width="100%" controls={true} url={video.video} onError={() => <div>Error </div>} />
-						<hr />
-					</div>
-				);
-			})}
-            <button
-                onClick={()=>setLoadMore(loadMore+3)}
-				style={{
-                    backgroundColor: 'white',
-                    
-					border: '0px',
-					borderRadius: '3px',
-					margin: '5px'
-				}}
-			>
-				Load more
-			</button>
+		<div style={{backgroundColor:'cyan',padding:'20px'}}>
+			<h1>Feature Videos</h1>
+			{videos
+				.map((video) => {
+					return (
+						<div key={video.id}>
+							<ReactPlayer
+								width="100%"
+								controls={true}
+								url={video.video}
+								onError={() => <div>Error </div>}
+							/>
+							<hr />
+						</div>
+					);
+				})
+				.slice(0, loadMore)}
+			<div style={{ textAlign: 'center' }}>
+				<button
+					onClick={() => setLoadMore(loadMore + 3)}
+					style={{
+						backgroundColor: 'white',
+						border: '0px',
+						borderRadius: '3px',
+						margin: '5px'
+					}}
+				>
+					Load more
+				</button>
+			</div>
 		</div>
 	);
 }
